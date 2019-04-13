@@ -12,7 +12,7 @@ class TasksController < ApplicationController
             flash[:success]="Taskが正常に投稿されました"
             redirect_to @task
         else
-            flash.now[:danger]="Taskが投稿されませんでした"
+            flash.now[:danger]="10文字以内でないため、Taskが投稿されませんでした"
             render :new
         end    
     end 
