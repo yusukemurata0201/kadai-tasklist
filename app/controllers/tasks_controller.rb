@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-    before_action :set_task,only:[:show,:edit,:update,:destroy]
+    before_action :set_task,only:[:show,:edit,:update,:destroy,]
     
     def index
         @tasks=Task.all
@@ -12,9 +12,11 @@ class TasksController < ApplicationController
             flash[:success]="Taskが正常に投稿されました"
             redirect_to @task
         else
-            flash.now[:danger]="10文字以内でないため、Taskが投稿されませんでした"
+            flash.now[:danger]="空文字であるもしくは、10文字以内でないため、Taskが投稿されませんでした"
             render :new
-        end    
+        end   
+        
+        
     end 
     
     def new
