@@ -3,7 +3,6 @@ class TasksController < ApplicationController
     
     def index
         @tasks=Task.all
-        render "task/index.html.erb"
     end
      
     def create
@@ -20,7 +19,6 @@ class TasksController < ApplicationController
     
     def new
         @task=Task.new
-        render "task/new.html.erb"
     end 
     
     def edit
@@ -62,6 +60,6 @@ class TasksController < ApplicationController
         
         
     def task_params
-        params.require(:task).permit(:content)
+        params.require(:task).permit(:content,:status)
     end
 end
